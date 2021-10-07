@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(13, 13, 27);
+    color: rgb(13, 13, 27);;
+}
+
+.form-group{
+    width: 200px;
+}
+
+.card-body span{
+    display: inline-block;
+    background: #eee;
+    border-radius: 3px;
+    padding: 4px 10px;
+    margin-left: 5px;
+}

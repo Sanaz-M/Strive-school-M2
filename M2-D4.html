@@ -31,35 +31,46 @@
     />
     <link rel="stylesheet" href="Team-generator.css">
   </head>
+  
   <body>
     
-        <form style="display: inline-block; margin-top: 50px; margin-left: 50;">
-            <div class="form-group" style="display: inline-block;">
+    <div class="container-center">
+     <div class="row">
+      <div>
+        <form>
+            <div class="form-group">
               <input type="text" class="form-control" id="inputName" placeholder="Enter name">
             </div>
             <button type="button" class="btn btn-success" onclick="addName()">Add name</button>
           </form>
-    </div>
-    
-        <form style="display: inline-block; margin-top: 50px; margin-left: 50;">
-            <div class="form-group" style="display: inline-block;">
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="How many teams?">
-            </div>
-            <button type="button" class="btn btn-success">Create teams</button>
-          </form>
-    </div>
-
-    <div class="card bg-light mb-3" style="max-width: 18rem; margin-left: 50px;">
-        <div class="card-header">Waiting list</div>
-        <div id="names" class="card-body">
-
-        </div>
       </div>
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" id="teamNumber" placeholder="How many teams?">
+        </div>
+            <button type="button" class="btn btn-success"  onclick="addTeam()">Create teams</button>
+            <button type="button" class="btn btn-danger ml-4">Reset</button>
+      </form>
+      </div>
+    </div>
+  
+      <div class="card bg-light mb-3 ml-5" style="max-width: 16rem;">
+        <div class="card-header">Waiting list</div>
 
-      <div class="container">
-          <div id="teamCards"  class="row">
+      <div id="names" class="card-body">
 
-          </div>
+      </div>
+      <button id="assign" type="button" class="btn btn-secondary">Assign</button>
+    </div>
+
+    <div class="container">
+      <div id="teamCards"  class="row">
+        <ul id="team-list">
+
+        </ul>
+
+    </div>  
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -71,6 +82,7 @@
       crossorigin="anonymous">
     </script>
     <script>
+
         function addName(){
             let name = document.getElementById("inputName").value;
             if(name){
@@ -79,12 +91,37 @@
                 document.getElementById("names").appendChild(span);
             }
         }
-        
+
         function creatTeams(){
-            document.getElementById('teamCards')
+            let cards= document.getElementById('teamCards')
             let div = document.createElement('div')
-            for (let i=0; i<)
+            teamsN = document.querySelector("#teamNumber")
+
+            for (let i=0; i<teamsN.innerText; i++) {
+              cards.innerHTML += ` <div class="team" 
+              <h4>Team ${i+1}</h4>
+              <ul class="list-group"></ul>
+              </div>`
+            }
         }
+
+        function addTeam(){
+          const newTeamNumber = parseInt(teamsN.innerHTML) + 1
+          cards.innerHTML += ` <div class="team" 
+              <h4>Team ${newTeamNumber}</h4>
+              <ul class="list-group"></ul>
+              </div>`
+        }
+
+        function assighNames(){
+         let teamList = document.querySelector("team-list");
+         let person = teamList.children[0];
+         
+        }
+        function resetTeams(){
+          
+        }
+        
         
     </script>
   </body>

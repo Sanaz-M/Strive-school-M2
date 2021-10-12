@@ -48,7 +48,10 @@
                 color: rgb(0, 38, 255) !important;
             }
 
-            /* EX7) Write a selector to target all the li into the first ordered-list in the sidebar ( Archives )
+            /* /* EX7) Write a selector to target all the li into the first ordered-list in the sidebar ( Archives ) */
+            aside div:nth-of-type(2) ol.list-unstyled:first-of-type > li {
+                background-color: gold;
+            }
             /* EX8) Write a selector to target the second post author */
             .blog-main div.blog-post:nth-of-type(2) > p.blog-post-meta > a{
             background-color: chartreuse;
